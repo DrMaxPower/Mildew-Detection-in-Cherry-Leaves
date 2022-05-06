@@ -29,8 +29,8 @@ def page_leaves_visualizer_body():
       st.image(avg_mildew, caption='Unhealthy Leaf - Avegare and Variability')
       st.image(avg_healthy, caption='healthy Leaf - Average and Variability')
       st.write(
-            f"* In the Difference Between Averages plot, the **darker** area shows" 
-            f"where both average images are similar. The lighter area shows where average images are different "
+            f"* In the difference between variability, the **darker** area shows" 
+            f"where both images are similar. The lighter area shows where variability differences "
             )
       st.write("---")
 
@@ -42,8 +42,8 @@ def page_leaves_visualizer_body():
             f"patterns where we could intuitively differentiate one to another.")
           st.image(diff_between_avgs, caption='Difference between average images')
           st.write(
-            f"* In the Difference Between Averages plot, the **darker** area shows" 
-            f"where both average images are similar. The lighter area shows where average images are different "
+            f"* In the difference between averages, the **darker** area shows" 
+            f"where both average images are similar. The lighter part is where averages are different "
             )
 
     if st.checkbox("Image Montage"): 
