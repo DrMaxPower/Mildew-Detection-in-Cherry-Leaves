@@ -11,17 +11,8 @@ from src.machine_learning.predictive_analysis import (
                                                     )
 
 def page_mildew_detector_body():
-    st.info(
-        f"* The client is interested to tell whether a leaf is infected with mildew "
-        f"or not."
-        )
 
-    st.write(
-        f"* You can download a set of unhealthy and healthy leaves for live prediction. "
-        f"You can download the images from [here](https://www.kaggle.com/datasets/codeinstitute/cherry-leaves)"
-        )
 
-    st.write("---")
 
     images_buffer = st.file_uploader('Upload leaf samples. You may select more than one.',
                                         type=['jpg','png'],accept_multiple_files=True)

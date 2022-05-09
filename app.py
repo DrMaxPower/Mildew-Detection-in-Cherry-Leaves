@@ -3,26 +3,20 @@ from app_pages.multipage import MultiPage
 
 # load pages scripts
 from app_pages.page_summary import page_summary_body
-
-# from app_pages.page_cells_visualizer import page_cells_visualizer_body
 from app_pages.page_leaves_visualizer import page_leaves_visualizer_body
-
-# from app_pages.page_malaria_detector import page_malaria_detector_body
 from app_pages.page_mildew_detector import page_mildew_detector_body
-
 from app_pages.page_project_hypothesis import page_project_hypothesis_body
 from app_pages.page_ml_performance import page_ml_performance_metrics
+from app_pages.page_ml_techniques import page_model_tech
 
+app = MultiPage(app_name="Farmy & Foods")  
 
-# app = MultiPage(app_name= "Malaria Detector") # Create an instance of the app 
-app = MultiPage(app_name= "Mildew Detector") # Create an instance of the app 
-
-# Add your app pages here using .add_page()
 app.add_page("Quick Project Summary", page_summary_body)
 app.add_page("Leaves Visualizer", page_leaves_visualizer_body)
 app.add_page("Mildew Detection", page_mildew_detector_body)
 app.add_page("Project Hypothesis", page_project_hypothesis_body)
 app.add_page("ML Performance Metrics", page_ml_performance_metrics)
+app.add_page("ML Techniques", page_model_tech)
 
 
 app.run()
