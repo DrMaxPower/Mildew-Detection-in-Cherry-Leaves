@@ -24,42 +24,81 @@ def page_ml_performance_metrics():
     with col2:
         model_loss = plt.imread(f"outputs/{version}/model_training_losses.png")
         st.image(model_loss, caption='Model Traninig Losses')
+
+
     st.write("---")
+
+
     if st.checkbox('Model: "sequential"'): 
-      st.write(
-        f"_________________________________________________________________\n"
-        f"Layer (type)                 Output Shape              Param #   \n"
-        f"=================================================================\n"
-        f"conv2d (Conv2D)              (None, 254, 254, 24)      672       \n"
-        f"_________________________________________________________________\n"
-        f"max_pooling2d (MaxPooling2D) (None, 127, 127, 24)      0         \n"
-        f"_________________________________________________________________\n"
-        f"conv2d_1 (Conv2D)            (None, 125, 125, 12)      2604      \n"
-        f"_________________________________________________________________\n"
-        f"max_pooling2d_1 (MaxPooling2 (None, 62, 62, 12)        0         \n"
-        f"_________________________________________________________________\n"
-        f"conv2d_2 (Conv2D)            (None, 60, 60, 8)         872       \n"
-        f"_________________________________________________________________\n"
-        f"max_pooling2d_2 (MaxPooling2 (None, 30, 30, 8)         0         \n"
-        f"_________________________________________________________________\n"
-        f"conv2d_3 (Conv2D)            (None, 28, 28, 6)         438       \n"
-        f"_________________________________________________________________\n"
-        f"max_pooling2d_3 (MaxPooling2 (None, 14, 14, 6)         0         \n"
-        f"_________________________________________________________________\n"
-        f"flatten (Flatten)            (None, 1176)              0         \n"
-        f"_________________________________________________________________\n"
-        f"dense (Dense)                (None, 128)               150656    \n"
-        f"_________________________________________________________________\n"
-        f"dropout (Dropout)            (None, 128)               0         \n"
-        f"_________________________________________________________________\n"
-        f"dense_1 (Dense)              (None, 1)                 129       \n"
-        f"=================================================================\n"
-        f"Total params: 155,371\n"
-        f"Trainable params: 155,371\n"
-        f"Non-trainable params: 0\n"
-        f"_________________________________________________________________\n"
+        st.text(
+            """
+            Model: "sequential_2"
+            _________________________________________________________________
+            Layer (type)                 Output Shape              Param #   
+            =================================================================
+            conv2d_4 (Conv2D)            (None, 254, 254, 24)      672       
+            _________________________________________________________________
+            max_pooling2d_4 (MaxPooling2 (None, 127, 127, 24)      0         
+            _________________________________________________________________
+            conv2d_5 (Conv2D)            (None, 125, 125, 12)      2604      
+            _________________________________________________________________
+            max_pooling2d_5 (MaxPooling2 (None, 62, 62, 12)        0         
+            _________________________________________________________________
+            conv2d_6 (Conv2D)            (None, 60, 60, 8)         872       
+            _________________________________________________________________
+            max_pooling2d_6 (MaxPooling2 (None, 30, 30, 8)         0         
+            _________________________________________________________________
+            conv2d_7 (Conv2D)            (None, 28, 28, 6)         438       
+            _________________________________________________________________
+            max_pooling2d_7 (MaxPooling2 (None, 14, 14, 6)         0         
+            _________________________________________________________________
+            flatten_1 (Flatten)          (None, 1176)              0         
+            _________________________________________________________________
+            dense_2 (Dense)              (None, 128)               150656    
+            _________________________________________________________________
+            dropout_1 (Dropout)          (None, 128)               0         
+            _________________________________________________________________
+            dense_3 (Dense)              (None, 1)                 129       
+            =================================================================
+            Total params: 155,371
+            Trainable params: 155,371
+            Non-trainable params: 0
+            _________________________________________________________________
+
+            """
+        )
+    
+
+    if st.checkbox('Sequential: Layers"'): 
+        st.text(
+            """
+            model = Sequential()
+
+            model.add(Conv2D(filters=24, kernel_size=(3,3),input_shape=image_shape, activation='relu',))
+            model.add(MaxPooling2D(pool_size=(2, 2)))
+
+            model.add(Conv2D(filters=12, kernel_size=(3,3),input_shape=image_shape, activation='relu',))
+            model.add(MaxPooling2D(pool_size=(2, 2)))
+
+            model.add(Conv2D(filters=8, kernel_size=(3,3),input_shape=image_shape, activation='relu',))
+            model.add(MaxPooling2D(pool_size=(2, 2)))
+
+            model.add(Conv2D(filters=6, kernel_size=(3,3),input_shape=image_shape, activation='relu',))
+            model.add(MaxPooling2D(pool_size=(2, 2)))
+
+            model.add(Flatten())
+            model.add(Dense(128, activation = 'relu'))
+
+            model.add(Dropout(0.5))
+            model.add(Dense(1, activation = 'sigmoid'))
+
+            model.compile(loss='binary_crossentropy',
+                        optimizer='adam',
+                        metrics=['accuracy'])
+            """
         )
 
 
-    st.write("### Generalised Performance on Test Set")
-    st.dataframe(pd.DataFrame(load_test_evaluation(version), index=['Loss', 'Accuracy']))
+    if st.checkbox('Generalised Performance"'): 
+
+        st.dataframe(pd.DataFrame(load_test_evaluation(version), index=['Loss', 'Accuracy']))

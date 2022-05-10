@@ -17,16 +17,19 @@ def page_leaves_visualizer_body():
     
     version = 'v1'
     if st.checkbox("Difference between average and variability image"):
-      
+
+      st.warning(
+      f"* In the difference between variability, the **darker** area shows " 
+      f"where both images are similar. The lighter area shows where variability differences. "
+      )
+
       avg_mildew = plt.imread(f"outputs/{version}/avg_var_powdery_mildew.png")
       avg_healthy = plt.imread(f"outputs/{version}/avg_var_healthy.png")
 
       st.image(avg_mildew, caption='Unhealthy Leaf - Avegare and Variability')
       st.image(avg_healthy, caption='healthy Leaf - Average and Variability')
-      st.warning(
-            f"* In the difference between variability, the **darker** area shows " 
-            f"where both images are similar. The lighter area shows where variability differences. "
-            )
+
+
       st.write("---")
 
     if st.checkbox("Differences between average unhealthy and average healthy leaf"):
