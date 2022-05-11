@@ -34,7 +34,7 @@ def page_mildew_detector_body():
                                         ignore_index=True)
         
         if not df_report.empty:
-            st.success(f"##### AI is **{100 * pred_proba:.3f}**% certen it is {pred_class}.")
+            st.success(f"##### AI is **{100 * pred_proba:.2f}**% certen it is {pred_class}.")
             st.table(df_report)
             st.markdown(download_dataframe_as_csv(df_report), unsafe_allow_html=True)
 
