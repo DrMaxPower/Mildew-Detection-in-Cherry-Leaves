@@ -54,15 +54,92 @@ The difference is made with grayscale, It seams to be the standard to use graysc
 As a stake holder there could be beneficial to automate the visually difference of a cherry leaf with and without mildew. Especially in education of new staff.
 The difference is made with grayscale, It seams to be the standard to use grayscale. Important to note is that not every colormap converts linear to grayscale. 
 
+#### Predicting algorithm
+This algorithm analyse nominal categorical variable of leaves with mildew mold or without mildew. This it does in range of the business requirements.
+Healthy is on the other hand an ordinal categorical variable and could be a consideration for the streakholders but could be difficult to measure.
+If there are other visual diseases this framework can expand its nominal categories to handel that. 
 
 
 ## ML Business Case
-* In the previous bullet, you potentially visualized a ML task to answer a business requirement. You should frame the business case using the method we covered in the course.
+Business idea was created by the steakholders. There ide was to study the visual diffirence between healthy and unhealthy leaves \
+with the hypothesis that the diffirence could be accurate identify by a computer with over 97% match rate. \
+The data understaning was derived and well sorted by the theam of Code Institute. The model of a deep convolving neural networks \
+eliminate the null hypothesis and showed good result. The output data was shown by a streamlit dashboard and deployed on heroku \
+for employees to ease there repetitive workload. Next up is for the steakholders to derive the deductive cycle. 
 
 
 ## Dashboard Design
 * List all dashboard pages and its content, either block of information or widgets, like: buttons, checkbox, image, or any other item that your dashboard library supports.
-* Eventually, during the project development, you may revisit your dashboard plan to update a give feature (for example, in the beginning of the project you were confident you would use a given plot to display an insight but eventually you needed to use another plot type).
+#### Sidebar
+
+The sidebar contains of 5 checkboxes: 
+* box1: Quick Project Summary
+* box2: Leaves Visualizer
+* box3: Mildew Detection
+* box4: Project Hypothesis
+* box5: ML Performance Metrics
+
+The design is streamlits default and the sidebar will colapse going to table size (768px).
+
+
+##### box1: Quick Project Summary
+Package of use: 
+* streamlit
+
+The user (employee) will be briefed on how to get started and the quality of the outcome.\
+A Info button gives more info about business requiraments, machine learning content and a link to this REAMDME file.
+
+
+
+##### box2: Leaves Visualizer
+Package of use: 
+* streamlit
+* matplotlib
+
+There are three checkbox alternatives:
+* Difference between average and variability image:
+    * matplotlib shows average of 20 leaves image in both categories.
+* Differences between average unhealthy and average healthy leaf
+    * matplotlib show difference between the two categories
+* Image Montage
+    * randomly show images from selected category in a 3x3 with matplotlib subplot.\
+        The category is chosen from a selectbox and is been executed buttom
+
+
+##### box3: Mildew Detection
+Package of use: 
+* streamlit
+* PIL
+* numpy
+* plotly
+* pandas
+
+Here evaluation of new unclasificated content will be classified by the built in AI. \
+The design is clean with an streamlits file_uploader
+The result shown is an info text, the uploaded imgage and an plotly bar followed by an success text and a table, both showing the result.\
+Last but not least is an HTML `<a>` Tag to download the result in a csv file. 
+ 
+
+
+##### box4: Project Hypothesis
+Package of use:
+* streamlit 
+
+The project hypothesis is show in a success box. 
+
+
+##### box5: ML Performance Metrics
+Package of use:
+* streamlit
+* matplotlib
+* pandas
+
+matplotlib shows a png fil over seaborn barplot of the train validation and test sets. Next is two \
+dot-line plots of the model history in png shown by matplotlib. \
+Next is three streamlit checkbox, the first two will show you text about the deep layers and last is a \
+pandas DataFrame opened up by streamlits dataframe.
+ 
+
 
 
 ## Unfixed Bugs
