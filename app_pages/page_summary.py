@@ -1,5 +1,4 @@
 import streamlit as st
-import matplotlib.pyplot as plt
 
 
 def page_summary_body():
@@ -12,18 +11,6 @@ def page_summary_body():
         f"It can instantly differ between healthy leaf or ones that has powdery mildew. " 
         f"Click the *Mildew Detection* (box 3) in the sidebar to uppload you image.\n"
         f"But before you do, have a look at the Image Montage in the (box 2) *Leaves Visualizer* of how images **is optimized**." 
-        )
-
-
-    if st.button("More Info"):
-
-        st.write(
-            "**At** Farm & Foods we are proved to deliver high quality products and even if our lives and the enviroment change we "
-            "strongly belive poeple like our products just the way they are both in taste and in price. Therefor have I "
-            "asked Marianne McGuineys and here team to get in the frontline of future technology. \n"
-            "All and all we whant our workes to minimize tedious and repetitive work and maximize planes of world domination. "
-            "Best regars Dr Max Power \n"
-            "*head and CEO* of **Farm & Foods**"       
         )
 
                 

@@ -14,12 +14,46 @@ To save time in this process, the IT team suggested an ML system that is capable
 * 2 - The client is interested to predict if a cherry leaf is healthy or contains powdery mildew.
 
 
+
 ## Hypothesis and how to validate?
-* List here your project hypothesis(es) and how you envision to validate it (them).
+#### Hypothesis
+* With a high accuracy separate heathy leaves from leaves with mildew infect with an AI.
+
+#### Validation
+To validate with high accuracy (over 97%) or (z-score over 2) you need a big and balanced sample set and this set has both. This hypotesis is binary classification of objects:
+* leaf with mildew
+* leaf without mildew
+
+There is actually a missleading information in this validation that the leaf is healthy. It only state *with or whitout* mildew with a high pression. 
+It is also an option that the leaf has mildew but in a verry small amount that there is no human visual trase of it. With that stated this deep learning algorim 
+can diffirent these two options within the goal range.\
+***Validation*** is made from a seperate folder from the test set. To make an analogy, we dont want to train on laying a puzzel or an iq test and validate our skills 
+whit a a puzzel we alredy layed.
+
+The train test and validation ratio is 70%, 20% and 10%. This is an iso standard.  
+
+
 
 
 ## Rationale to map the business requirements to the Data Visualizations and ML tasks
-* List your business requirements and a rationale to map them to the Data Visualizations and ML tasks.
+
+## Business requirements
+* The client is interested in conducting a study to visually differentiate a cherry leaf that is healthy from one that contains powdery mildew.
+* The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew.
+
+#### visually differentiate
+As a stake holder there could be beneficial to automate the visually difference of a cherry leaf with and without mildew. Especially in education of new staff.
+The difference is made with grayscale, It seams to be the standard to use grayscale. Important to note is that not every colormap converts linear to grayscale. 
+
+
+## Business requirements
+* The client is interested in conducting a study to visually differentiate a cherry leaf that is healthy from one that contains powdery mildew.
+* The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew.
+
+#### visually differentiate
+As a stake holder there could be beneficial to automate the visually difference of a cherry leaf with and without mildew. Especially in education of new staff.
+The difference is made with grayscale, It seams to be the standard to use grayscale. Important to note is that not every colormap converts linear to grayscale. 
+
 
 
 ## ML Business Case

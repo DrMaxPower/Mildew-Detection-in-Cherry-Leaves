@@ -8,8 +8,9 @@ def page_project_hypothesis_body():
 
     # Fix accuracy
     st.success(
-        f"* This program can be used to with a high accuracy separate heathy leaves from leaves with mildew infect. \n"
+        f"* This program can be used to with a high accuracy separate leaves without mildew infect from leaves with mildew infect. \n"
         f"* The genneral accuracy rate is 0.9988"
     )
 
+    
     
