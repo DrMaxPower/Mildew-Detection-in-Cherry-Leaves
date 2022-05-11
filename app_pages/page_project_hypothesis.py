@@ -1,6 +1,4 @@
 import streamlit as st
-import pandas as pd
-import matplotlib.pyplot as plt
 
 
 def page_project_hypothesis_body():
