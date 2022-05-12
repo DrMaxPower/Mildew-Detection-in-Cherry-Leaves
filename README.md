@@ -20,15 +20,15 @@ To save time in this process, the IT team suggested an ML system that is capable
 * With a high accuracy separate leaves with mildew from leaves without mildew infect with an AI.
 
 #### Validation
-To validate with high accuracy (over 97%) you need a big and balanced sample set and this set has both. This hypotesis is binary classification of objects:
+To validate with high accuracy (over 97%), you need a big and balanced sample set and this set has both. This hypotesis is a binary classification of objects:
 * leaf with mildew
 * leaf without mildew
 
-There is actually a missleading information in this validation that the leaf is healthy. It only state *with or whitout* mildew with a high pression. 
-It is also an option that the leaf has mildew but in a verry small amount that there is no human visual trace of it. With that stated this deep learning algorim 
-can diffirent these two options within the goal range.\
-***Validation*** is made from a seperate folder from the test set. To make an analogy, we dont want to train on laying a puzzel or an iq test and validate our skills 
-whit a puzzel or test we alredy done.
+There is actually misleading information in this validation of whether the leaf is healthy. It only states *with or whitout* mildew with a high presicion. 
+There is also an option that the leaf has mildew but in a very small amount where there is no human visual trace of it. With that stated, this deep learning algoritm 
+can differentiate from these two options within the goal range.\
+***Validation*** is made from a seperate folder from the test set. To take an analogy, we do not want to exercise laying puzzel or performing an iq test to validate our skills 
+with a puzzel or test we already done one.
 
 The train test and validation ratio is 70%, 20% and 10%. 
 
@@ -40,19 +40,19 @@ The train test and validation ratio is 70%, 20% and 10%.
 * The client is interested in predicting if a cherry leaf is healthy or contains powdery mildew.
 
 #### visually differentiate
-As a stake holder there could be beneficial to automate the visually difference of a cherry leaf with and without mildew. Especially in education of new staff.
+As a stake holder it could be beneficial to automate the visual differences between a cherry leaf with and without mildew. Especially in education of new staff.
 The difference is made with grayscale, It seams to be the standard to use grayscale. Important to note is that not every colormap converts linear to grayscale.
-The difference in hard to interpret, the dark part part is where images are similar and the brighter where it differs.      
+The difference in hard to interpret, the dark part part is where images are similar and the brighter to where it differs.      
 
 
 #### Predicting algorithm
-This algorithm analyse nominal categorical variable of leaves with mildew mold or without mildew. This it does in range of the business requirements.
-Healthy is on the other hand an ordinal categorical variable and could be a consideration for the streakholders but could be difficult to measure.
-If there are other visual diseases this framework can expand its nominal categories to handel that. 
+This algorithm analyses nominal categorical variable of leaves with mildew mold or without mildew. This it does in range of the business requirements.
+Healthy is on the other hand an ordinal categorical variable and could be a consideration for the steakholders but could be difficult to measure.
+If there are other visual diseases, this framework can expand its nominal categories to handle that. 
 
 ##### CNN
-This algorithm is done with tensorflow keras. It is a self improving algorithm loosely based on neural synapse, where every synapse (node) has a weight, threshold, bias and memory conected to it. This recognition algorithm brakes down the images to grids and within the grids create smaller grids. In the smaller grid the algorith looks for Q-points. This then tries to find symmetries in the walk between the points. This "walk" uses ReLu which is a linear activation for the walk between points. ReLU is the most commonly used activation function in neural networks. \
-If the "walk" or cycle does not give you the targeted symmetry it will not keep it in memory or "lose" the pattern. The nodes can be layed deep or borad, this one ins made deep. Today (2022-05-12) there are no certain optimized pattern for this. Therefore I tryed *Stirling numbers of the first kind*  with 2 disjoint cycles. With some crunching of the numbers I found the sum could be derived by the kormula (n-a)!sum(_k=1 to ^ k=(n-1)) of (1/k). Example [5/2] = 50 and 50 = ( 4!( 1 + 1/2 + 1/3 + 1/4 )) = 24 + 12 + 8 + 6. This gave me realive good result, even if the Dense layer in the Flatten part was really low. There was a big spread in the result in lower numbers and I did not found any conection between Stirling numbers and Flatten Dense numbers. however I kept that number high becouse the spread of infected leaves can vary and a good result of an uncertain leaf is more important than speed in this case.               
+This algorithm is done with tensorflow keras. It is a self-improving algorithm loosely based on neural synapse, where every synapse (node) has a weight, threshold, bias and memory conected to it. This recognition algorithm brakes down the images to grids and within the grids create smaller grids. In the smaller grid the algorith looks for Q-points. This then tries to find symmetries in the walk between the points. This "walk" uses ReLu which is a linear activation for the walk between points. ReLU is the most commonly used activation function in neural networks. \
+If the "walk" or cycle does not give you the targeted symmetry it will not keep it in memory or "lose" the pattern. The nodes can be laid deep or broad, this one is made deep. Today (2022-05-12) there are no certain optimized patterns for this. Therefore I tried *Stirling numbers of the first kind*  with 2 disjoint cycles. With some crunching of the numbers I found the sum could be derived by the kormula (n-a)!sum(_k=1 to ^ k=(n-1)) of (1/k). Example [5/2] = 50 and 50 = ( 4!( 1 + 1/2 + 1/3 + 1/4 )) = 24 + 12 + 8 + 6. This gave me a relatively good result, even if the Dense layer in the Flatten part was really low. There was a big spread in the result in lower numbers and I did not find any connection between Stirling numbers and Flatten Dense numbers. however I kept that number high because the spread of infected leaves can vary and a good result of an uncertain leaf is more important than speed in this case.               
 
 
 ## ML Business Case
