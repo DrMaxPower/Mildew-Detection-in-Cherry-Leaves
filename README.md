@@ -30,7 +30,7 @@ can diffirent these two options within the goal range.\
 ***Validation*** is made from a seperate folder from the test set. To make an analogy, we dont want to train on laying a puzzel or an iq test and validate our skills 
 whit a puzzel or test we alredy done.
 
-The train test and validation ratio is 70%, 20% and 10%. This is an iso standard.  
+The train test and validation ratio is 70%, 20% and 10%. 
 
 
 ## Rationale to map the business requirements to the Data Visualizations and ML tasks
@@ -55,7 +55,6 @@ This algorithm is done with tensorflow keras. It is a self improving algorithm l
 If the "walk" or cycle does not give you the targeted symmetry it will not keep it in memory or "lose" the pattern. The nodes can be layed deep or borad, this one ins made deep. Today (2022-05-12) there are no certain optimized pattern for this. Therefore I tryed *Stirling numbers of the first kind*  with 2 disjoint cycles. With some crunching of the numbers I found the sum could be derived by the kormula (n-a)!sum(_k=1 to ^ k=(n-1)) of (1/k). Example [5/2] = 50 and 50 = ( 4!( 1 + 1/2 + 1/3 + 1/4 )) = 24 + 12 + 8 + 6. This gave me realive good result, even if the Dense layer in the Flatten part was really low. There was a big spread in the result in lower numbers and I did not found any conection between Stirling numbers and Flatten Dense numbers. however I kept that number high becouse the spread of infected leaves can vary and a good result of an uncertain leaf is more important than speed in this case.               
 
 
-
 ## ML Business Case
 Business idea was created by the steakholders. There ide was to study the visual diffirence between healthy and unhealthy leaves \
 with the hypothesis that the diffirence could be accurate identify by a computer with over 97% match rate. \
@@ -65,7 +64,7 @@ for employees to ease there repetitive workload. Next up is for the steakholders
 
 
 ## Dashboard Design
-* List all dashboard pages and its content, either block of information or widgets, like: buttons, checkbox, image, or any other item that your dashboard library supports.
+
 #### Sidebar
 
 The sidebar contains of 5 checkboxes: 
@@ -130,8 +129,7 @@ Package of use:
 * matplotlib
 * pandas
 
-matplotlib shows a png fil over seaborn barplot of the train validation and test sets. Next is two \
-dot-line plots of the model history in png shown by matplotlib. \
+matplotlib shows a png fil over seaborn barplot of the train, validation and test sets. Next is two dot-line plots of the model history in png shown by matplotlib. 
 Next is three streamlit checkbox, the first two will show you text about the deep layers and last is a \
 pandas DataFrame opened up by streamlits dataframe.
  
@@ -139,7 +137,7 @@ pandas DataFrame opened up by streamlits dataframe.
 
 
 ## Unfixed Bugs
-* You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
+
 
 ## Deployment
 ### Heroku
@@ -155,7 +153,20 @@ pandas DataFrame opened up by streamlits dataframe.
 
 
 ## Main Data Analysis and Machine Learning Libraries
-* Here you should list the libraries you used in the project and provide example(s) on how you used these libraries.
+* numpy==1.19.2
+    * usede to convert numbers and objects to arrays and operate on them.
+* pandas==1.1.2
+    * Is used to struckture data. Index data series or a "table" of data in a DataFrames
+* matplotlib==3.3.1
+    * .pyplot (v. 4.12.0) is used to creat almost all graph plots  
+* seaborn==0.11.0
+    * seaborn helps "styling and ordering pyplots graphs"
+* streamlit==0.85.0
+    * Is used to connect frontend and backend fast and easy.  
+* tensorflow-cpu==2.6.0
+    * Multidimensional array operator building the core of the CNN operations
+* keras==2.6.0
+    * seting the sequal for the model and hadels operations on the multidimensional arrays
 
 
 ## Credits 
