@@ -27,8 +27,7 @@ To validate with high accuracy (over 97%), you need a big and balanced sample se
 There is actually misleading information in this validation of whether the leaf is healthy. It only states *with or whitout* mildew with a high presicion. 
 There is also an option that the leaf has mildew but in a very small amount where there is no human visual trace of it. With that stated, this deep learning algoritm 
 can differentiate from these two options within the goal range.\
-***Validation*** is made from a seperate folder from the test set. To take an analogy, we do not want to exercise laying puzzel or performing an iq test to validate our skills 
-with a puzzel or test we already done one.
+***Validation*** is made from a seperate folder from the test set. This force the algorithm to get the result of pattern recognition rather than memorising.  
 
 The train test and validation ratio is 70%, 20% and 10%. 
 
@@ -42,7 +41,7 @@ The train test and validation ratio is 70%, 20% and 10%.
 #### visually differentiate
 As a stake holder it could be beneficial to automate the visual differences between a cherry leaf with and without mildew. Especially in education of new staff.
 The difference is made with grayscale, It seams to be the standard to use grayscale. Important to note is that not every colormap converts linear to grayscale.
-The difference in hard to interpret, the dark part part is where images are similar and the brighter to where it differs.      
+The difference is hard to interpret, the dark part part is where images are similar and the brighter to where it differs.      
 
 
 #### Predicting algorithm
@@ -51,7 +50,7 @@ Healthy is on the other hand an ordinal categorical variable and could be a cons
 If there are other visual diseases, this framework can expand its nominal categories to handle that. 
 
 ##### CNN
-This algorithm is done with tensorflow keras. It is a self-improving algorithm loosely based on neural synapse, where every synapse (node) has a weight, threshold, bias and memory conected to it. This recognition algorithm brakes down the images to grids and within the grids create smaller grids. In the smaller grid the algorith looks for Q-points. This then tries to find symmetries in the walk between the points. This "walk" uses ReLu which is a linear activation for the walk between points. ReLU is the most commonly used activation function in neural networks. \
+This algorithm is done with tensorflow keras. It is a self-improving algorithm loosely based on neural synapse, where every synapse (node) has a weight, threshold, bias and memory conected to it. This recognition algorithm brakes down the images to grids and within the grids create smaller grids. The grid size is a 3 x 3 pixel grid set by kernel_size. In the grid the algorith looks for Q-points and picks out one point in every kernal. A functions rescales the grid saving only the Q-points (MaxPooling2D). Then tries to find symmetries in the walk between the points. This "walk" uses ReLu which is a linear activation for the walk between points. ReLU is a commonly used activation function in neural networks. \
 If the "walk" or cycle does not give you the targeted symmetry it will not keep it in memory or "lose" the pattern. The nodes can be laid deep or broad, this one is made deep. Today (2022-05-12) there are no certain optimized patterns for this. Therefore I tried *Stirling numbers of the first kind*  with 2 disjoint cycles. With some crunching of the numbers I found the sum could be derived by the kormula (n-a)!sum(_k=1 to ^ k=(n-1)) of (1/k). Example [5/2] = 50 and 50 = ( 4!( 1 + 1/2 + 1/3 + 1/4 )) = 24 + 12 + 8 + 6. This gave me a relatively good result, even if the Dense layer in the Flatten part was really low. There was a big spread in the result in lower numbers and I did not find any connection between Stirling numbers and Flatten Dense numbers. however I kept that number high because the spread of infected leaves can vary and a good result of an uncertain leaf is more important than speed in this case.               
 
 
@@ -171,21 +170,13 @@ pandas DataFrame opened up by streamlits dataframe.
 
 ## Credits 
 
-* In this section you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism. 
-* You can break the credits section up into Content and Media, depending on what you have included in your project. 
-
+* This object oriented website layout is made by GyanShashwat1611 at [Github site](https://github.com/GyanShashwat1611/WalkthroughProject01/). His layout is a deep learning on its own. 
+* The dataset is sourced from [Kaggle](https://www.kaggle.com/codeinstitute/cherry-leaves)
+ 
 ### Content 
 
-- The text for the Home page was taken from Wikipedia Article A
-- Instructions on how to implement form validation on the Sign Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
-
-### Media
-
-- The photos used on the home and sign up page are from This Open Source site
-- The images used for the gallery page were taken from this other open source site
+- The image from the NoteBook_Template was taken from robertdickau.com [stirling1]("https://www.robertdickau.com/stirling1-5-2.png"/)
+- The icon in the page favicon were taken from [Twemoji](https://twemoji.maxcdn.com/2/test/preview.html/)
 
 
 
-## Acknowledgements (optional)
-* In case you would like to thank the people that provided support through this project.
