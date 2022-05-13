@@ -7,11 +7,12 @@ def page_summary_body():
 
     st.info(
         f" ### General Informatio \n"
-        "**This webstie** has an built in machine learning system that is capable of detecting mildew infection of a cherry leaf image. "
-        f"It can instantly differ between healthy leaf or ones that has powdery mildew. " 
-        f"Click the *Mildew Detection* (box 3) in the sidebar to uppload you image.\n"
-        f"But before you do, have a look at the Image Montage in the (box 2) *Leaves Visualizer* of how images **is optimized**." 
+        "**This website** has a built-in machine learning system that is capable of detecting mildew infection of a cherry leaf image. "
+        f"It can instantly differ between healthy leaves or ones that have powdery mildew. " 
+        f"Click the Mildew Detection (box 3) in the sidebar to upload your image. \n"
+        f"But before you do, have a look at the Image Montage in the (box 2) *Leaves Visualizer* of how images **are optimized**." 
         )
+
 
                 
     st.write("---")
@@ -20,7 +21,7 @@ def page_summary_body():
     st.success(
         f" ### Requirements and Quality\n"
         f"**Our** goal was to be at over ±2 standard deviations from the mean "
-        f"and we are proude to informe you that we are well above *97%* range and therfore exided our accuracy **goal**. "    
+        f"and we are proud to inform you that we are well above the *97%*  range and therefore exited our accuracy **goal**. "    
         )
 
 

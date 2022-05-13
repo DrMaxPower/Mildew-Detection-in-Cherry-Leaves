@@ -8,7 +8,7 @@ import random
 def page_leaves_visualizer_body():
     st.write("### Leaves Visualizer")
     st.info(
-        f"* To see visually differencies or have a look at Image Montage "
+        f"* To see visual differences or have a look at Image Montage, "
         f"click the button belew. ")
     
     version = 'v1'
