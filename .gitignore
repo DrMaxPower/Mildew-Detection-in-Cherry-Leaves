@@ -1,4 +1,4 @@
 kaggle.json
 *.ipynb
-input/cherry_leaves_dataset/cherry-leaves/test
-input/cherry_leaves_dataset/cherry-leaves/train
+inputs/cherry_leaves_dataset/cherry-leaves/test
+inputs/cherry_leaves_dataset/cherry-leaves/train
