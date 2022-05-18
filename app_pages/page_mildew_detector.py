@@ -36,5 +36,11 @@ def page_mildew_detector_body():
         if not df_report.empty:
             st.success(f"##### AI is **{100 * pred_proba:.2f}**% certen it is {pred_class}.")
             st.table(df_report)
+            if float(pred_proba) < .9:
+                st.warning("## Uncertain Image, can not determain object")
+
             st.markdown(download_dataframe_as_csv(df_report), unsafe_allow_html=True)
+            
+
+      
 

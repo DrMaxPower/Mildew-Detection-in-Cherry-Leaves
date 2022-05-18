@@ -133,9 +133,12 @@ Next is three streamlit checkbox, the first two will show you text about the dee
 pandas DataFrame opened up by streamlits dataframe.
  
 
-
-
 ## Unfixed Bugs
+* 255,255,255,4
+* humugus sized images
+
+## Feature Features
+This engine based on clean data of cherry-leaves. During operation it's unlikely the data will be of the same quality. There might be misunderstandings of using this ML on laves from different species or some images might contain object not related to leaves. The ML is not trained of handle that type of data. If the calculated prediction is lower then 90% certainty, a warning text will be added recomending to look over the input data. However some none leaf objected data will return accuracy above 90% and in an automated farmland this can lead to fatal outcomes and meme tweets from Elon.      
 
 
 ## Deployment
