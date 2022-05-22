@@ -102,10 +102,8 @@ Kernal filter for vertical lines could look like this:
 
 **Red Filter**              
 
-| 1 | 0 | -1 |              
---------------          
-| 1 | 0 | -1 |              
---------------                        
+| 1 | 0 | -1 |                     
+| 1 | 0 | -1 |                                     
 | 1 | 0 | -1 |
 
 *and* 
@@ -113,19 +111,15 @@ Kernal filter for vertical lines could look like this:
 **Green Filter**
 
 | 1 | 0 | -1 | 
--------------- 
-| 2 | 0 | -2 |
---------------  
+| 2 | 0 | -2 | 
 | 1 | 0 | -1 |  
 
 *and*
 
 **Blue Filter**
 
-| 3  | 0 | -3  |
----------------- 
+| 3  | 0 | -3  | 
 | 10 | 0 | -10 |
-----------------
 | 3  | 0 | -3  |
 
 
