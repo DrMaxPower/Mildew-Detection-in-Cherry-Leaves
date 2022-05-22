@@ -218,6 +218,7 @@ pandas DataFrame opened up by streamlits dataframe.
 ms-toolsai.jupyter-keymap extension is not synced, but not added in .gitpod.yml
 ms-toolsai.jupyter-renderers extension is not synced, but not added in .gitpod.yml
 
+
 ## Feature Features 
 This engine is based on clean data of cherry leaves. During operation, it's unlikely the data will be of the same quality. There might be misunderstandings about using this ML on laves from different species or some images might contain objects not related to leaves. The ML has not been trained to handle that type of data. If the calculated prediction is lower than 90% certainty, a warning text will be added recommending to look over the input data. However, some none leaf objected data will return accuracy above 90% and in an automated farmland, this can lead to fatal outcomes and meme tweets from Elon.   
 
