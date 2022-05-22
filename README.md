@@ -102,25 +102,25 @@ Kernal filter for vertical lines could look like this:
 
 **Red Filter**              
 
-| 1 | 0 | -1 |                     
-| 1 | 0 | -1 |                                     
-| 1 | 0 | -1 |
+| 1 | 0 | -1 |      <br>              
+| 1 | 0 | -1 |      <br>                                
+| 1 | 0 | -1 |      <br>  
 
 *and* 
 
 **Green Filter**
 
-| 1 | 0 | -1 | 
-| 2 | 0 | -2 | 
-| 1 | 0 | -1 |  
+| 1 | 0 | -1 |      <br>                          
+| 2 | 0 | -2 |      <br>
+| 1 | 0 | -1 |      <br>  
 
 *and*
 
 **Blue Filter**
 
-| 3  | 0 | -3  | 
-| 10 | 0 | -10 |
-| 3  | 0 | -3  |
+| 3  | 0 | -3  |        <br>
+| 10 | 0 | -10 |        <br>
+| 3  | 0 | -3  |        <br>
 
 
 * *note that odd size matrix (3x3, 5x5, ..) has a middle point and is a standard to use*
