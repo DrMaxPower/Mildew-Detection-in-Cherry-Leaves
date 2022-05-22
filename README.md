@@ -102,25 +102,25 @@ Kernal filter for vertical lines could look like this:
 
 **Red Filter**              
 
-| 1 | 0 | -1 |      <br>              
-| 1 | 0 | -1 |      <br>                                
-| 1 | 0 | -1 |      <br>  
+| 1 | 0 | -1 |                     
+| 1 | 0 | -1 |                                     
+| 1 | 0 | -1 |
 
 *and* 
 
 **Green Filter**
 
-| 1 | 0 | -1 |      <br>                          
-| 2 | 0 | -2 |      <br>
-| 1 | 0 | -1 |      <br>  
+| 1 | 0 | -1 |                
+| 2 | 0 | -2 |                 
+| 1 | 0 | -1 |                   
 
 *and*
 
 **Blue Filter**
 
-| 3  | 0 | -3  |        <br>
-| 10 | 0 | -10 |        <br>
-| 3  | 0 | -3  |        <br>
+| 3  | 0 | -3  |                        
+| 10 | 0 | -10 |                     
+| 3  | 0 | -3  |                          
 
 
 * *note that odd size matrix (3x3, 5x5, ..) has a middle point and is a standard to use*
@@ -215,13 +215,14 @@ pandas DataFrame opened up by streamlits dataframe.
  
 
 ## Unfixed Bugs
-
+ms-toolsai.jupyter-keymap extension is not synced, but not added in .gitpod.yml
+ms-toolsai.jupyter-renderers extension is not synced, but not added in .gitpod.yml
 
 ## Feature Features 
 This engine is based on clean data of cherry leaves. During operation, it's unlikely the data will be of the same quality. There might be misunderstandings about using this ML on laves from different species or some images might contain objects not related to leaves. The ML has not been trained to handle that type of data. If the calculated prediction is lower than 90% certainty, a warning text will be added recommending to look over the input data. However, some none leaf objected data will return accuracy above 90% and in an automated farmland, this can lead to fatal outcomes and meme tweets from Elon.   
 
-
-             
+## Evaluation
+The cherry plantation crop from Farmy & Foods now has a full function target algorithm to target if a leaf has mildew or not. The website is easy to use and gives good results. It is a recommendation to expand the algorithm to determine if the object on the image is a leaf or something else.  
 
 
 ## Deployment

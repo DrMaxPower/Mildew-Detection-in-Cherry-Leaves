@@ -21,9 +21,20 @@ def page_ml_performance_metrics():
     with col1: 
         model_acc = plt.imread(f"outputs/{version}/model_training_acc.png")
         st.image(model_acc, caption='Model Traninig Accuracy')
+        st.info(
+                f"* accuracy refers to the accuracy from the training set \n" 
+                f"* val_accuracy refers to the accuracy against the validation set"
+                )
     with col2:
         model_loss = plt.imread(f"outputs/{version}/model_training_losses.png")
         st.image(model_loss, caption='Model Traninig Losses')
+        st.info(
+                f"Loss is the training of of the ML to change its weights and biases \n" 
+                f"in order to make better predictions"
+                )
+        
+    
+
 
 
     st.write("---")
