@@ -100,15 +100,36 @@ In Feature Learning filters search the image for:
 They are 24 filters in the first layer and each filter (kernel) focuses on a specific target.
 Kernal filter for vertical lines could look like this:
 
- Red Filter_________________Green Filter_____________ Blue Filter <br>
-<br>
-| 1 | 0 | -1 |______________| 1 | 0 | -1 |_____________| 3  | 0 | -3  | <br>
---------------_____and______--------------_____and_____---------------- <br>
-| 1 | 0 | -1 |______________| 2 | 0 | -2 |             | 10 | 0 | -10 | <br>
---------------______________--------------_____________---------------- <br>        
-| 1 | 0 | -1 |______________| 1 | 0 | -1 |_____________| 3  | 0 | -3  | <br>
-<br>
-* *note that odd size matrix has a middle point and is a standard to use*
+**Red Filter**              
+
+| 1 | 0 | -1 |              
+--------------          
+| 1 | 0 | -1 |              
+--------------                        
+| 1 | 0 | -1 |
+
+*and* 
+
+**Green Filter**
+
+| 1 | 0 | -1 | 
+-------------- 
+| 2 | 0 | -2 |
+--------------  
+| 1 | 0 | -1 |  
+
+*and*
+
+**Blue Filter**
+
+| 3  | 0 | -3  |
+---------------- 
+| 10 | 0 | -10 |
+----------------
+| 3  | 0 | -3  |
+
+
+* *note that odd size matrix (3x3, 5x5, ..) has a middle point and is a standard to use*
 Every filter creates a new multidimensional array. A bias is added and together they are activated by a  ReLu function.
 **z = Wa + b**
 z = new layer
